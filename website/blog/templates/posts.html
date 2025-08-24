@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<h1>my blog</h1>
+<br/><br/>
+<h2>Letest post</h2>
+<hr/>
+{% for post in post.all  %}
+<a href="{% url 'detail' post.id %}"></a><h3>{{ post.title }}</h3>
+{{ post.public_date }}
+<br/>
+<img src="{{ post.image.url }}" height = 200 width= 200/>
+<br/>
+<p>
+    {{ post.summary }}
+</p>
+{% endfor %}
+</body>
+</html>
